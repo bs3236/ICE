@@ -1,0 +1,99 @@
+﻿Variable,Explanation
+GISJOIN,GIS Join Match Code
+YEAR,Data File Year
+STATE,State Name
+STATEA,State Code
+STATEFP10,State FIPS Code
+COUNTY,County Name
+COUNTYA,County Code
+COUNTYFP10,County FIPS Code
+ZCTA5CE10,2010 Census 5-digit ZIP Code Tabulation Area
+tot_pop,Total ZCTA Population
+med_hh_inc,Median household income in the past 12 months (in 2011 inflation-adjusted dollars)
+p_nh_white,Percent of ZCTA Population Not Hispanic or Latino: White alone
+p_nh_black,Percent of ZCTA Population Not Hispanic or Latino: Black or African American alone
+p_nh_ai,Percent of ZCTA Population Not Hispanic or Latino: American Indian and Alaska Native alone
+p_nh_asian,Percent of ZCTA Population Not Hispanic or Latino: Asian alone
+p_hisp,Percent of ZCTA Population Hispanic or Latino
+p_no_hs,Percent of ZCTA Population with less than high school education
+p_ling_iso,Percent of ZCTA Population No one 14 and over speaks English only or speaks English 'very well'
+p_pov,Percent of ZCTA Population Ratio of Income to Poverty Level in the Past 12 Months under 1.00
+p_rent_occ,Percent of ZCTA Population in Renter occupied housing units
+pop_density,Total ZCTA Population per Square Kilometer
+tot_hh,Total Households in State/County/CBSA
+inc_less_10k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): Less than $10,000"
+inc_10k_15k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): $10,000 to $14,999"
+inc_15k_20k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): $15,000 to $19,999"
+inc_20k_25k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): $20,000 to $24,999"
+inc_25k_30k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): $25,000 to $29,999"
+inc_30k_35k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): $30,000 to $34,999"
+inc_35k_40k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): $35,000 to $39,999"
+inc_40k_45k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): $40,000 to $44,999"
+inc_45k_50k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): $45,000 to $49,999"
+inc_50k_60k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): $50,000 to $59,999"
+inc_60k_75k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): $60,000 to $74,999"
+inc_75k_100k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): $75,000 to $99,999"
+inc_100k_125k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): $100,000 to $124,999"
+inc_125k_150k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): $125,000 to $149,999"
+inc_150k_200k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): $150,000 to $199,999"
+inc_200k_more,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (All Households): $200,000 or more"
+b_inc_less_10k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): Less than $10,000"
+b_inc_10k_15k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): $10,000 to $14,999"
+b_inc_15k_20k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): $15,000 to $19,999"
+b_inc_20k_25k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): $20,000 to $24,999"
+b_inc_25k_30k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): $25,000 to $29,999"
+b_inc_30k_35k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): $30,000 to $34,999"
+b_inc_35k_40k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): $35,000 to $39,999"
+b_inc_40k_45k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): $40,000 to $44,999"
+b_inc_45k_50k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): $45,000 to $49,999"
+b_inc_50k_60k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): $50,000 to $59,999"
+b_inc_60k_75k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): $60,000 to $74,999"
+b_inc_75k_100k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): $75,000 to $99,999"
+b_inc_100k_125k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): $100,000 to $124,999"
+b_inc_125k_150k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): $125,000 to $149,999"
+b_inc_150k_200k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): $150,000 to $199,999"
+b_inc_200k_more,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (Black or African American Alone Householder): $200,000 or more"
+w_inc_less_10k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): Less than $10,000"
+w_inc_10k_15k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): $10,000 to $14,999"
+w_inc_15k_20k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): $15,000 to $19,999"
+w_inc_20k_25k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): $20,000 to $24,999"
+w_inc_25k_30k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): $25,000 to $29,999"
+w_inc_30k_35k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): $30,000 to $34,999"
+w_inc_35k_40k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): $35,000 to $39,999"
+w_inc_40k_45k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): $40,000 to $44,999"
+w_inc_45k_50k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): $45,000 to $49,999"
+w_inc_50k_60k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): $50,000 to $59,999"
+w_inc_60k_75k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): $60,000 to $74,999"
+w_inc_75k_100k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): $75,000 to $99,999"
+w_inc_100k_125k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): $100,000 to $124,999"
+w_inc_125k_150k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): $125,000 to $149,999"
+w_inc_150k_200k,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): $150,000 to $199,999"
+w_inc_200k_more,"Household Income in the Past 12 Months (in 2011 Inflation-Adjusted Dollars) (White Alone Householder): $200,000 or more"
+p20_hh_state,20th Percentile Household of Total Households in State
+p80_hh_state,80th Percentile Household of Total Households in State
+p20_hh_cbsa,20th Percentile Household of Total Households in CBSA
+p80_hh_cbsa,80th Percentile Household of Total Households in CBSA
+p20_cutoff_state,20th Percentile State Level Household Income Using Midpoint of Income Bins
+p80_cutoff_state,80th Percentile State Level Household Income Using Midpoint of Income Bins
+p20_cutoff_cbsa,20th Percentile CBSA Level Household Income Using Midpoint of Income Bins
+p80_cutoff_cbsa,80th Percentile CBSA Level Household Income Using Midpoint of Income Bins
+threshold_bin_p20_state,20th Percentile State Level Household Income Bin in Ascending Order by Income
+threshold_bin_p80_state,80th Percentile State Level Household Income Threshold Bin in Ascending Order by Income
+threshold_bin_p20_cbsa,20th Percentile CBSA Level Household Income Bin in Ascending Order by Income
+threshold_bin_p80_cbsa,80th Percentile CBSA Level Household Income Threshold Bin in Ascending Order by Income
+p20_static,20th Percentile Household Income Using Nationwide ACS from 2009 for 2007-11 5-Year ACS ($20453)
+p80_static,80th Percentile Household Income Using Nationwide ACS from 2009 for 2007-11 5-Year ACS ($100000)
+poor_income_static,Total Households in County/CBSA Below 2009 Nationwide ACS 20th Percentile Household Income ($20453)
+rich_income_static,Total Households in County/CBSA Above 2009 Nationwide ACS 80th Percentile Household Income ($100000)
+static_ice_income,Income of Concentrations at the Extremes (All Households) Using Nationwide ACS Household Income: ((rich_income_static - poor_income_static)/tot_hh)
+poor_black_static,Total Black or African American Alone Households in County/CBSA Below 2009 Nationwide ACS 20th Percentile Household Income ($20453)
+rich_white_static,"Total White Alone, Not Hispanic or Latino Households in County/CBSA Above 2009 Nationwide ACS 80th Percentile Household Income ($100000)"
+static_ice_race,Income of Concentrations at the Extremes using 2009 Nationwide ACS Household Income: ((rich_white_static - poor_black_static)/tot_hh)
+poor,Total Households Below County/CBSA Specific 20th Percentile Household Income
+rich,Total Households Above County/CBSA Specific 80th Percentile Household Income
+ice_income,Income of Concentrations at the Extremes (All Households) Using County/CBSA Household Income: ((rich - poor)/tot_hh)
+poor_black,Total Black or African American Alone Households Below County/CBSA Specific 20th Percentile Household Income
+rich_white,"Total White Alone, Not Hispanic or Latino Households Above County/CBSA Specific 80th Percentile Household Income"
+ice_race,Income of Concentrations at the Extremes Using County/CBSA Household Income: ((rich_white - poor_black)/tot_hh)
+p_overlap,Percent of ZCTA that Overlaps with CBSA (intersect_area/Shape_area)*100
+urban,"If at least 50% of ZCTA overlaps with CBSA (p_overlap ≥50%), urban = 1 and ZCTA is considered urban; if less than 50% of ZCTA overlaps with CBSA (p_overlap <50%), urban = 0, and ZCTA is considered rural"
