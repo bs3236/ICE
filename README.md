@@ -2,6 +2,4 @@ This code calculates the Index of Concentration at the Extremes (ICE) using US C
 
 ICE values are calculated at the Zip Code Tabulation Area (ZCTA) and Census Tract level.
 
-ICE is measured in 3 different manners:
-1) Using the nationwide 2007 
 
