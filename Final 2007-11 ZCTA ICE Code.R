@@ -1,24 +1,51 @@
-##Final ZCTA Level ICE Code - Static, Income Alone, and Race ICE for 2007-11 Census Years##
-####set working directory####
-setwd("~/Documents/Work_Documents/ICE/nhgis_files/")
+####Description####
+## ZCTA Level Index of Concentrations at the Extremes (ICE):
+# 2007-11 Census Years
+    # Static
+    # Income Alone
+    # Race
 
-####load libraries####
+####Load Packages####
 library(sf)
 library(tidyverse)
 library(stringr)
 library(dplyr)
+library(here)
 
 ####load files####
-acs_zcta_07_11 <- read_csv("nhgis0052_csv/nhgis0052_ds184_20115_zcta.csv") #ZCTA level ACS data 2007-11
-cbsa_sf <- st_read("nhgis0042_shape/nhgis0042_shapefile_tl2010_us_cbsa_2010/US_cbsa_2010.shp") #CBSA shapefile
-zcta_sf <- st_read("nhgis0042_shape/nhgis0042_shapefile_tl2010_us_zcta_2010/US_zcta_2010.shp") #ZCTA shapefile
-county_sf <- st_read("nhgis0048_shape/nhgis0048_shapefile_tl2010_us_county_2010/US_county_2010.shp") #County shapefile
-state_07_11 <- read_csv("nhgis0045_csv/nhgis0045_ds184_20115_state.csv") #State level HH income data 2007-11
-county_07_11 <- read_csv("nhgis0047_csv/nhgis0047_ds184_20115_county.csv") #County level HH income data 2007-11
-county_race_07_11 <- read_csv("nhgis0046_csv/nhgis0046_ds185_20115_county.csv") #County level HH income data, Black only and White only households 2007-11
-cbsa_07_11 <- read_csv("nhgis0017_csv/nhgis0017_ds184_20115_2011_cbsa.csv") #CBSA level HH income data 2007-11
-cbsa_race_07_11 <- read_csv("nhgis0026_csv/nhgis0026_ds185_20115_2011_cbsa.csv") #CBSA level HH income data 2007-11, Black only and White only households
-zcta_cbsa_overlap_pct <- readRDS("zcta_cbsa_overlap/zcta_cbsa_overlap.rds") #spatial overlap of ZCTAs and CBSAs
+acs_zcta_07_11 <- read_csv(here("data",
+                                "nhgis0052_csv",
+                                "nhgis0052_ds184_20115_zcta.csv"))  #ZCTA level ACS data 2007-11
+cbsa_sf <- st_read(here("data",
+                        "nhgis0042_shape",
+                        "nhgis0042_shapefile_tl2010_us_cbsa_2010",
+                        "US_cbsa_2010.shp")) #CBSA shapefile
+zcta_sf <- st_read(here("data",
+                        "nhgis0042_shape",
+                        "nhgis0042_shapefile_tl2010_us_zcta_2010",
+                        "US_zcta_2010.shp")) #ZCTA shapefile
+county_sf <- st_read(here("data",
+                         "nhgis0048_shape",
+                         "nhgis0048_shapefile_tl2010_us_county_2010",
+                         "US_county_2010.shp")) #County shapefile
+state_07_11 <- read_csv(here("data",
+                            "nhgis0045_csv",
+                            "nhgis0045_ds184_20115_state.csv")) #State level HH income data 2007-11
+county_07_11 <- read_csv(here("data",
+                              "nhgis0047_csv",
+                              "nhgis0047_ds184_20115_county.csv")) #County level HH income data 2007-11
+county_race_07_11 <- read_csv(here("data",
+                                   "nhgis0046_csv",
+                                   "nhgis0046_ds185_20115_county.csv"))  #County level HH income data, Black only and White only households 2007-11
+cbsa_07_11 <- read_csv(here("data",
+                            "nhgis0017_csv",
+                            "nhgis0017_ds184_20115_2011_cbsa.csv")) #CBSA level HH income data 2007-11
+cbsa_race_07_11 <- read_csv(here("data",
+                                 "nhgis0026_csv",
+                                 "nhgis0026_ds185_20115_2011_cbsa.csv")) #CBSA level HH income data 2007-11, Black only and White only households
+zcta_cbsa_overlap_pct <- readRDS(here("data",
+                                      "zcta_cbsa_overlap",
+                                      "zcta_cbsa_overlap.rds")) #spatial overlap of ZCTAs and CBSAs
 
 ####ZCTA ACS Data Cleaning####
 #total population: MNTE
@@ -717,20 +744,21 @@ cbsa_sf <- cbsa_sf %>%
 #make geometries valid in both ZCTA and CBSA sf's
 zcta_sf <- st_make_valid(zcta_sf)
 cbsa_sf <- st_make_valid(cbsa_sf)
+
 #complete spatial intersection to determine overlap of ZCTAs with CBSAs
-zcta_cbsa_overlap_pct <- st_intersection(zcta_sf, cbsa_sf) %>%
-  mutate(intersect_area = st_area(.)) %>% #create new column with shape area
-  select(ZCTA5CE10, intersect_area) %>%  #select only ZCTAs and intersect area for join
-  st_drop_geometry() #convert sf to a df
+#zcta_cbsa_overlap_pct <- st_intersection(zcta_sf, cbsa_sf) %>%
+#  mutate(intersect_area = st_area(.)) %>% #create new column with shape area
+#  select(ZCTA5CE10, intersect_area) %>%  #select only ZCTAs and intersect area for join
+#  st_drop_geometry() #convert sf to a df
 
-#Merge by zcta name
-zcta_sf <- merge(zcta_sf, zcta_cbsa_overlap_pct, by = "GISJOIN_ZCTA", all.x = TRUE)
-
-colnames(zcta_cbsa_overlap_pct)
+#SKIP
 zcta_cbsa_overlap_pct <- zcta_cbsa_overlap_pct %>%
   rename(GISJOIN_ZCTA = GISJOIN) %>%
   select(GISJOIN_ZCTA, intersect_area) %>%
   st_drop_geometry()
+
+#Merge by zcta name
+zcta_sf <- merge(zcta_sf, zcta_cbsa_overlap_pct, by = "GISJOIN_ZCTA", all.x = TRUE)
 
 #Calculate overlap percentage
 zcta_sf <- zcta_sf %>% 
@@ -803,3 +831,23 @@ zcta_county_ice_acs_07_11 <- merge(zcta_county_ice_07_11, acs_zcta_07_11_df,
 #join ZCTA ACS data to zcta_cbsa_ice data
 zcta_cbsa_ice_acs_07_11 <- merge(zcta_cbsa_ice_07_11, acs_zcta_07_11_df,
                                   by = "GISJOIN_ZCTA", duplicateGeoms = T)
+
+####drop geometry and write .csv files####
+#drop geometry
+zcta_county_ice_acs_df_07_11 <- zcta_county_ice_acs_07_11 %>%
+  st_drop_geometry()
+
+#write rural/county .csv
+write_csv(zcta_county_ice_acs_df_07_11, "zcta_county_ice_2007_2011.csv")
+
+#drop geometry
+zcta_cbsa_ice_acs_df_07_11 <- zcta_cbsa_ice_acs_07_11 %>%
+  st_drop_geometry()
+
+#write urban/cbsa .csv
+write_csv(zcta_cbsa_ice_acs_df_07_11, "zcta_cbsa_ice_2007_2011.csv")
+
+####write .rdata file####
+save(zcta_county_ice_acs_07_11, zcta_cbsa_ice_acs_07_11, file = "zcta_cbsa_ice_2007_2011.rdata")
+
+

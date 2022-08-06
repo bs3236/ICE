@@ -1,25 +1,53 @@
-##Final Census Tract Level ICE Code - Static, Income Alone, and Race ICE for 2007-11 Census Years - California Only##
-####set working directory####
-setwd("~/Documents/Work_Documents/ICE/nhgis_files/")
+####Description####
+## Census Tract Level Index of Concentrations at the Extremes (ICE):
+  # 2007-11 Census Years
+    # Static
+    # Income Alone
+    # Race
 
-####load libraries####
+####Load Packages####
 library(sf)
 library(tidyverse)
 library(stringr)
 library(dplyr)
+library(here)
 
 ####load files####
-acs_tract_07_11 <- read_csv("nhgis0054_csv/nhgis0054_ds184_20115_tract.csv") #Census Tract level ACS data 2007-11
-tract_sf <- st_read("nhgis0056_shape/nhgis0056_shapefile_tl2010_us_tract_2010/US_tract_2010.shp") #2010 Census Tract shapefile
-cbsa_sf <- st_read("nhgis0042_shape/nhgis0042_shapefile_tl2010_us_cbsa_2010/US_cbsa_2010.shp") #CBSA shapefile
-zcta_sf <- st_read("nhgis0042_shape/nhgis0042_shapefile_tl2010_us_zcta_2010/US_zcta_2010.shp") #ZCTA shapefile
-county_sf <- st_read("nhgis0048_shape/nhgis0048_shapefile_tl2010_us_county_2010/US_county_2010.shp") #County shapefile
-state_07_11 <- read_csv("nhgis0045_csv/nhgis0045_ds184_20115_state.csv") #State level HH income data 2007-11
-county_07_11 <- read_csv("nhgis0047_csv/nhgis0047_ds184_20115_county.csv") #County level HH income data 2007-11
-county_race_07_11 <- read_csv("nhgis0046_csv/nhgis0046_ds185_20115_county.csv") #County level HH income data, Black only and White only households 2007-11
-cbsa_07_11 <- read_csv("nhgis0017_csv/nhgis0017_ds184_20115_2011_cbsa.csv") #CBSA level HH income data 2007-11
-cbsa_race_07_11 <- read_csv("nhgis0026_csv/nhgis0026_ds185_20115_2011_cbsa.csv") #CBSA level HH income data 2007-11, Black only and White only households
-
+acs_tract_07_11 <- 
+  read_csv(here("data",
+                "nhgis0054_csv",
+                "nhgis0054_ds184_20115_tract.csv"))  #Census Tract level ACS data 2007-11
+tract_sf <- st_read(here("data",
+                         "nhgis0056_shape",
+                         "nhgis0056_shapefile_tl2010_us_tract_2010",
+                         "US_tract_2010.shp")) #2010 Census Tract shapefile
+cbsa_sf <- st_read(here("data",
+                        "nhgis0042_shape",
+                        "nhgis0042_shapefile_tl2010_us_cbsa_2010",
+                        "US_cbsa_2010.shp")) #CBSA shapefile
+zcta_sf <- st_read(here("data",
+                        "nhgis0042_shape",
+                        "nhgis0042_shapefile_tl2010_us_zcta_2010",
+                        "US_zcta_2010.shp")) #ZCTA shapefile
+county_sf <- st_read(here("data",
+                          "nhgis0048_shape",
+                          "nhgis0048_shapefile_tl2010_us_county_2010",
+                          "US_county_2010.shp")) #County shapefile
+state_07_11 <- read_csv(here("data",
+                             "nhgis0045_csv",
+                             "nhgis0045_ds184_20115_state.csv")) #State level HH income data 2007-11
+county_07_11 <- read_csv(here("data",
+                              "nhgis0047_csv",
+                              "nhgis0047_ds184_20115_county.csv")) #County level HH income data 2007-11
+county_race_07_11 <- read_csv(here("data",
+                                   "nhgis0046_csv",
+                                   "nhgis0046_ds185_20115_county.csv"))  #County level HH income data, Black only and White only households 2007-11
+cbsa_07_11 <- read_csv(here("data",
+                            "nhgis0017_csv",
+                            "nhgis0017_ds184_20115_2011_cbsa.csv")) #CBSA level HH income data 2007-11
+cbsa_race_07_11 <- read_csv(here("data",
+                                 "nhgis0026_csv",
+                                 "nhgis0026_ds185_20115_2011_cbsa.csv")) #CBSA level HH income data 2007-11, Black only and White only households
 ####Census Tract ACS Data Cleaning####
 
 #merge tract shapefile to ACS 2007-11 data
