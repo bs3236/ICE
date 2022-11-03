@@ -1,4 +1,4 @@
-This code calculates the Index of Concentration at the Extremes (ICE) at the Zip Code Tabulation Area (ZCTA) level. 
+This code quantifies the Index of Concentration at the Extremes (ICE) at the Zip Code Tabulation Area (ZCTA) level. 
 
 ICE is defined as the total number of households in a given geographic area above the 80th percentile household income, minus the total number of households in a given geographic area below the 20th percentile household income, divided by the total number of households in that geographic area 
 (ICE_i = (A_i - P_i)/T_i).
