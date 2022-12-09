@@ -12,7 +12,7 @@ ICE is calculated in 3 ways:
 
 ICE was computed at the core-based statistical area (CBSA) and county levels. At the county level, the 20th and 80th percentile household was assigned by state. At CBSA level, the 20th and 80th percentile was assigned per each CBSA.
 
-ZCTAs were divided by urban and rural status. If a ZCTA overlapped 50% or more with a CBSA, it was labelled as "urban." If a ZCTA overlapped less than 50% with a CBSA, the CBSA was labelled as "rural".
+ZCTAs were divided by urban and rural status. If a ZCTA overlapped 50% or more with a CBSA, it was labelled as "urban." If a ZCTA overlapped less than 50% with a CBSA, the ZCTA was labelled as "rural".
 
 ICE in rural ZCTAs was assigned at the county level. ICE in urban ZCTAs was assigned at the CBSA level.
 
